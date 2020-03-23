@@ -2,8 +2,11 @@ package com.example.opencv;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.opencv.android.BaseLoaderCallback;
@@ -27,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
             Log.i(TAG, "load OpenCV Library Failed.");
             tv.setText(getString(R.string.load_fail));
         }
+
+        Button btn=findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Log.w(TAG, "onClick button.");
+                Intent myIntent = new Intent(MainActivity.this,CameraActivity.class);
+                startActivity(myIntent);
+            }
+        });
     }
 
     protected void onResume() {
