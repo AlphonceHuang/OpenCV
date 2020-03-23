@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OpenCV 3.4.9</string>
+    <string name="load_fail">Load OpenCV library failed.</string>
+    <string name="load_success">Load OpenCV library successful.</string>
+</resources>
