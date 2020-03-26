@@ -8,25 +8,17 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
 
-import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
-import org.opencv.android.LoaderCallbackInterface;
-import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
 
 public class CameraActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2{
     static final String TAG = "Alan";
-
-    private static final int ACTIVITY_CAMERA = 1002;
-    private static final int ACTIVITY_READ_STORAGE = 1003;
-    private static final int ACTIVITY_WRITE_STORAGE = 1008;
 
 
     private CameraBridgeViewBase mOpenCvCameraView;
@@ -49,14 +41,14 @@ public class CameraActivity extends AppCompatActivity implements CameraBridgeVie
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
         actionBar.hide();
-
+/*
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
             Log.w(TAG, "CameraActivity:Get CAMERA permission success.");
         }else{
             Log.w(TAG, "CameraActivity:Get CAMERA permission fail.");
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, ACTIVITY_CAMERA);
         }
-
+*/
         mOpenCvCameraView = findViewById(R.id.openCVCamera);
         mOpenCvCameraView.setCameraIndex(CameraBridgeViewBase.CAMERA_ID_BACK); // 使用後相機
         mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
