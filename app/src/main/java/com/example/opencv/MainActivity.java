@@ -42,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Log.w(TAG, "onClick button.");
-                //Intent myIntent = new Intent(MainActivity.this,CameraActivity.class);
-                //startActivity(myIntent);
 
                 // 取得 Camera 權限
                 if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
